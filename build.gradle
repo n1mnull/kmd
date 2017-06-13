@@ -1,0 +1,31 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.0.RELEASE")
+    }
+}
+
+group 'com.mandarin.kmd'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'spring-boot'
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.slf4j:slf4j-api:1.7.14'
+//    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+//    compile 'com.squareup.retrofit2:converter-gson:2.0.2'
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '2.41.0'
+    compile 'com.google.code.gson:gson:2.8.0'
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
