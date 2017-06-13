@@ -2,16 +2,21 @@ package kmd.model;
 
 import java.util.Objects;
 
-public class PeerModel {
+public class Peer {
 
     private String ipaddr;
     private int port;
     private double profit;
 
-    public PeerModel() {
+    public Peer() {
     }
 
-    public PeerModel(String ipaddr, int port, double profit) {
+    public Peer(String ipaddr, int port) {
+        this.ipaddr = ipaddr;
+        this.port = port;
+    }
+
+    public Peer(String ipaddr, int port, double profit) {
         this.ipaddr = ipaddr;
         this.port = port;
         this.profit = profit;
@@ -34,11 +39,11 @@ public class PeerModel {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        PeerModel peerModel = (PeerModel) o;
+        Peer peer = (Peer) o;
 
-        if (port != peerModel.port) return false;
-        if (Double.compare(peerModel.profit, profit) != 0) return false;
-        return ipaddr != null ? ipaddr.equals(peerModel.ipaddr) : peerModel.ipaddr == null;
+        if (port != peer.port) return false;
+//        if (Double.compare(peer.profit, profit) != 0) return false;
+        return ipaddr != null ? ipaddr.equals(peer.ipaddr) : peer.ipaddr == null;
     }
 
     @Override
@@ -55,13 +60,4 @@ public class PeerModel {
         sb.append('}');
         return sb.toString();
     }
-
-//    @Override
-//    public String toString() {
-//        return "PeerModel{" +
-//                "ipaddr='" + ipaddr + '\'' +
-//                ", port=" + port +
-//                ", profit=" + profit +
-//                '}';
-//    }
 }

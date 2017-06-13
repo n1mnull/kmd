@@ -2,7 +2,7 @@ package kmd.model;
 
 import java.util.Objects;
 
-public class CoinModel {
+public class Coin {
 
     private String coin;
     private String status;
@@ -14,11 +14,11 @@ public class CoinModel {
     private int estimatedrate;
     private int txfee;
 
-    public CoinModel() {
+    public Coin() {
     }
 
-    public CoinModel(String coin, String status, String smartaddress, String rpc,
-                     int pubtype, int p2shtype, int wiftype, int estimatedrate, int txfee) {
+    public Coin(String coin, String status, String smartaddress, String rpc,
+                int pubtype, int p2shtype, int wiftype, int estimatedrate, int txfee) {
         this.coin = coin;
         this.status = status;
         this.smartaddress = smartaddress;
@@ -69,20 +69,20 @@ public class CoinModel {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof CoinModel)) return false;
+        if (!(o instanceof Coin)) return false;
 
-        CoinModel coinModel = (CoinModel) o;
+        Coin coin = (Coin) o;
 
-        if (pubtype != coinModel.pubtype) return false;
-        if (p2shtype != coinModel.p2shtype) return false;
-        if (wiftype != coinModel.wiftype) return false;
-        if (estimatedrate != coinModel.estimatedrate) return false;
-        if (txfee != coinModel.txfee) return false;
-        if (coin != null ? !coin.equals(coinModel.coin) : coinModel.coin != null) return false;
-        if (status != null ? !status.equals(coinModel.status) : coinModel.status != null) return false;
-        if (smartaddress != null ? !smartaddress.equals(coinModel.smartaddress) : coinModel.smartaddress != null)
+        if (pubtype != coin.pubtype) return false;
+        if (p2shtype != coin.p2shtype) return false;
+        if (wiftype != coin.wiftype) return false;
+        if (estimatedrate != coin.estimatedrate) return false;
+        if (txfee != coin.txfee) return false;
+        if (this.coin != null ? !this.coin.equals(coin.coin) : coin.coin != null) return false;
+        if (status != null ? !status.equals(coin.status) : coin.status != null) return false;
+        if (smartaddress != null ? !smartaddress.equals(coin.smartaddress) : coin.smartaddress != null)
             return false;
-        return rpc != null ? rpc.equals(coinModel.rpc) : coinModel.rpc == null;
+        return rpc != null ? rpc.equals(coin.rpc) : coin.rpc == null;
     }
 
     @Override
